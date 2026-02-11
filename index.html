@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .widget {
+      width: 260px;
+      padding: 22px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .title {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .days {
+      font-size: 46px;
+      font-weight: 500;
+      color: #222;
+      margin: 6px 0;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="widget">
+    <div class="title">Faltam</div>
+    <div class="days" id="daysLeft">0</div>
+    <div class="subtitle">dias para o meu objetivo ✨</div>
+  </div>
+
+  <script>
+    //  (ANO, MÊS-1, DIA)
+    const targetDate = new Date(2026, 2, 2); // 1 de janeiro de 2026
+
+    function updateDays() {
+      const today = new Date();
+      const diffTime = targetDate - today;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById("daysLeft").innerText = diffDays;
+    }
+
+    updateDays();
+  </script>
+
+</body>
+</html>
